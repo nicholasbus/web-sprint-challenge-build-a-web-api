@@ -45,6 +45,7 @@ A _"test"_ script already exists you can use to run tests against your code.
 #### Build an API
 
 - [ ] Inside `api/actions/actions-router.js` build endpoints for performing CRUD operations on _actions_:
+
   - `[GET] /api/actions` returns an array of actions (or an empty array) as the body of the _response_.
   - `[GET] /api/actions/:id` returns an action with the given `id` as the body of the _response_.
   - `[POST] /api/actions` returns the newly created action as the body of the _response_.
@@ -52,6 +53,7 @@ A _"test"_ script already exists you can use to run tests against your code.
   - `[DELETE] /api/actions/:id` returns no _response_ body.
 
 - [ ] Inside `api/projects/projects-router.js` build endpoints for performing CRUD operations on _projects_:
+
   - `[GET] /api/projects` returns an array of projects (or an empty array) as the body of the response.
   - `[GET] /api/projects/:id` returns a project with the given `id` as the body of the _response_.
   - `[POST] /api/projects` returns the newly created project as the body of the _response_.
@@ -59,6 +61,7 @@ A _"test"_ script already exists you can use to run tests against your code.
   - `[DELETE] /api/projects/:id` returns no _response_ body.
 
 - [ ] Inside `api/projects/projects-router.js` add an endpoint for retrieving the list of actions for a project:
+
   - `[GET] /api/projects/:id/actions` sends an array of actions (or an empty array) as the body of the response.
 
 - Both Projects and Actions have an optional `completed` property (see Database Schemas below). In both cases it's a boolean stored in the database as a 1 or a 0. Make sure to transform the raw `completed` values obtained from the db to `true` or `false`, before sending them back to the client.
@@ -85,13 +88,13 @@ The description of the structure and extra information about each _resource_ sto
 
 #### Actions
 
-| Field       | Data Type | Metadata                                                                                         |
-| ----------- | --------- | ------------------------------------------------------------------------------------------------ |
-| id          | number    | no need to provide it when creating posts, the database will automatically generate it           |
-| project_id  | number    | required, must be the id of an existing project                                                  |
-| description | string    | up to 128 characters long, required                                                              |
-| notes       | string    | no size limit, required. Used to record additional notes or requirements to complete the action  |
-| completed   | boolean   | used to indicate if the action has been completed, not required                                  |
+| Field       | Data Type | Metadata                                                                                        |
+| ----------- | --------- | ----------------------------------------------------------------------------------------------- |
+| id          | number    | no need to provide it when creating posts, the database will automatically generate it          |
+| project_id  | number    | required, must be the id of an existing project                                                 |
+| description | string    | up to 128 characters long, required                                                             |
+| notes       | string    | no size limit, required. Used to record additional notes or requirements to complete the action |
+| completed   | boolean   | used to indicate if the action has been completed, not required                                 |
 
 ### Database Persistence Helpers
 
@@ -140,7 +143,21 @@ After finishing your required elements, you can push your work further. These go
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
+
+- Node.js is a JavaScript runtime that allows you to run JavaScript code outside of a browser. Node.js is useful because it allows you to do things with JavaScript that were only before possible with languages like C++, Java, C#, etc. Express is a server side routing framework that is used to build web APIs and web servers. Express is useful because it abstracts a lot of the work when building out a web server so the programmer only has to focus on the important details.
+
 1. Understand and explain the use of Middleware.
+
+- Middleware is used to further extend the functionality of Express. Middleware can do lots of things but is commonly used to validate the request body, and request parameters that are sent to an endpoint. Middleware can also be used to log requests and to provide security to routes in an application.
+
 1. The basic principles of the REST architectural style.
+
+- REST stands for REpresentational State Transfer, REST allows for creation and manipulation of resources.
+
 1. Understand and explain the use of Express Routers.
+
+- Express routers are used to separate groups of routes into different files in order to keep the code coherent and organized.
+
 1. Describe tooling used to manually test the correctness of an API.
+
+- Some tooling used to manually test the correctness of an API are tools like Postman and Insomnia. Postman and Insomnia are tools that allow us to send all kinds of requests to an API and get a response back, Postmand and Insomnia also allow for the use of headers and body in the request.
